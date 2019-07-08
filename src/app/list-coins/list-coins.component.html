@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div>
+    <div class="row">
+      <div class="col-md-3">Name:</div>
+      <div class="col-md-2">Symbol:</div>
+      <div class="col-md-2">Price:</div>
+      <div class="col-md-2">Change in 24h</div>
+      <div class="col-md-3">Last Update</div>
+    </div>
+  </div>
+  <div>
+    <div class="row" *ngFor="let smt of smtng">
+      <div class="col-md-3">{{smt.name}}</div>
+      <div class="col-md-2">{{smt.symbol}}</div>
+      <div class="col-md-2">{{smt.quote.USD.price}}</div>
+      <div class="col-md-2">{{smt.quote.USD.percent_change_24h}}</div>
+      <div class="col-md-3">{{smt.last_updated}}</div>
+    </div>
+  </div>
+</div>
+
