@@ -8,16 +8,10 @@ import { GetDataService } from "../services/get-data.service";
 })
 export class ListCoinsComponent implements OnInit {
   coins: any;
-  smtng: any;
 
-  constructor(private get: GetDataService) {
+  constructor(public get: GetDataService) {}
+
+  async ngOnInit() {
+    this.coins = await this.get.getData('USD');
   }
-
-  ngOnInit() {
-    this.coins = this.get.getData();
-    this.smtng = this.get.data();
-    console.log(this.smtng)
-    console.log(this.coins)
-  }
-
 }

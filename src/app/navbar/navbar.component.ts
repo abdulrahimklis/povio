@@ -28,5 +28,6 @@ export class NavbarComponent implements OnInit {
 
   cny() {
     this.store.dispatch(CNY());
+
   }
 }
