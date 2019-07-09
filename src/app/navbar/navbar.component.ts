@@ -18,6 +18,11 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  refresh() {
+    location.reload();
+  }
+
   usd() {
     this.store.dispatch(USD());
   }

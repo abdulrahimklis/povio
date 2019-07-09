@@ -13,11 +13,11 @@ export class GetDataService {
     private http: HttpClient,
   ) {}
 
-  url = (currency: string) => `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=1000&convert=${currency || 'USD'}`;
+  url = (numOf: number, currency: string) => `https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=${numOf || 100}&convert=${currency || 'USD'}`;
 
-   getData(currency: string) {
+   getData(numOf: number, currency: string) {
      return new Promise((resolve, reject) => {
-       this.http.get(this.url(currency),{
+       this.http.get(this.url(numOf, currency),{
          headers: new HttpHeaders({
            "X-CMC_PRO_API_KEY": "7c1ac462-bc7f-4b52-9f8f-47604d5d6820",
            "Content-Type": "application/json",

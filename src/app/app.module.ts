@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ListCoinsComponent } from './list-coins/list-coins.component';
 import { HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './navbar/navbar.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ListCoinsComponent,
-    NavbarComponent
+    NavbarComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
