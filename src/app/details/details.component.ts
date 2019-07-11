@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  selector: 'app-details',
+  templateUrl: './details.component.html',
+  styleUrls: ['./details.component.css']
 })
-export class SettingsComponent implements OnInit {
+export class DetailsComponent implements OnInit {
 
   data: any = {
     "id": 1,

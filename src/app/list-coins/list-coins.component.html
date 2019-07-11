@@ -1,8 +1,8 @@
-<app-navbar></app-navbar>
 <div class="container-fluid">
   <div style="background-color: #f8f9fa;">
     <div class="row">
-      <div class="col-md-3">Name:</div>
+      <div class="col-md-1">Rank:</div>
+      <div class="col-md-2">Name:</div>
       <div class="col-md-2">Symbol:</div>
       <div class="col-md-2">Price:</div>
       <div class="col-md-2">Change in 24h</div>
@@ -10,8 +10,9 @@
     </div>
   </div>
   <div>
-    <div class="row gray-color" *ngFor="let coin of coins">
-      <div class="col-md-3 gray-element">{{coin.name}}</div>
+    <div class="row gray-color" *ngFor="let coin of coins; let i = index;">
+      <div class="col-md-1 gray-element">{{i+1}}</div>
+      <div class="col-md-2 gray-element">{{coin.name}}</div>
       <div class="col-md-2 gray-element">{{coin.symbol}}</div>
       <div class="col-md-2 gray-element">{{coin.quote.USD.price}}</div>
       <div class="col-md-2 gray-element">{{coin.quote.USD.percent_change_24h}}</div>

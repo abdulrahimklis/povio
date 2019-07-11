@@ -10,6 +10,7 @@ import { ListCoinsComponent } from './list-coins/list-coins.component';
 import { HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './navbar/navbar.component';
 import { SettingsComponent } from './settings/settings.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SettingsComponent } from './settings/settings.component';
     AppComponent,
     ListCoinsComponent,
     NavbarComponent,
-    SettingsComponent
+    SettingsComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

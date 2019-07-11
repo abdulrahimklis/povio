@@ -17,6 +17,7 @@ export class ListCoinsComponent implements OnInit {
 
   async ngOnInit() {
     this.coins = await this.get.getData(100,'USD');
+    console.log(this.coins[1])
   }
 
 }
