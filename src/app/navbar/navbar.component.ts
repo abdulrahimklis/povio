@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
-import { Observable } from "rxjs";
-import { USD, EUR, CNY } from "../store/actions/value.action";
+import { Store } from '@ngxs/store';
+import { AddCurrency } from '../state/actions/currency.actions';
 
 @Component({
   selector: 'app-navbar',
@@ -9,30 +8,17 @@ import { USD, EUR, CNY } from "../store/actions/value.action";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  val$: Observable<number>;
 
-  constructor(private store: Store<{ value: number }>) {
-    this.val$ = store.pipe(select('value'))
-  }
+  constructor(private store: Store) { }
 
   ngOnInit() {
   }
 
+  addCurrency(payload) {
+    this.store.dispatch(new AddCurrency(payload));
+  }
 
   refresh() {
     location.reload();
-  }
-
-  usd() {
-    this.store.dispatch(USD());
-  }
-
-  eur() {
-    this.store.dispatch(EUR());
-  }
-
-  cny() {
-    this.store.dispatch(CNY());
-
   }
 }

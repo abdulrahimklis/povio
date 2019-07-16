@@ -2,7 +2,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="marginR10">
-        <a routerLink="/">List Coins</a>
+        <a routerLink="/" class="listCoins">List Coins</a>
       </li>
       <li class="marginR10">
         <a routerLink="/settings">Settings</a>
@@ -12,11 +12,11 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <span (click)="usd()">USD</span>
+      <span (click)="addCurrency('USD')">USD</span>
       <span>|</span>
-      <span (click)="eur()">EUR</span>
+      <span (click)="addCurrency('EUR')">EUR</span>
       <span>|</span>
-      <span (click)="cny()">CNY</span>
+      <span (click)="addCurrency('CNY')">CNY</span>
     </form>
   </div>
 </nav>

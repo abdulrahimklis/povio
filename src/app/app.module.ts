@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxsModule } from '@ngxs/store';
+import { CurrencyState, OneElement } from './state/currency.state'
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 import { StoreModule } from "@ngrx/store";
 import { valueReducer } from "./store/reducers/value.reducer";
@@ -11,7 +15,6 @@ import { HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './navbar/navbar.component';
 import { SettingsComponent } from './settings/settings.component';
 import { DetailsComponent } from './details/details.component';
-
 
 @NgModule({
   declarations: [
@@ -25,7 +28,12 @@ import { DetailsComponent } from './details/details.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ value: valueReducer })
+    NgxsModule.forRoot([
+      CurrencyState,
+      OneElement,
+    ]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot()
   ],
   providers: [
   ],

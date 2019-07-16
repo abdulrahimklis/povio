@@ -10,12 +10,16 @@
     </div>
   </div>
   <div>
-    <div class="row gray-color" *ngFor="let coin of coins; let i = index;">
+    <div
+    routerLink="/details"
+    class="row gray-color"
+    (click)="clickOneElement(coin)"
+    *ngFor="let coin of coins; let i = index;">
       <div class="col-md-1 gray-element">{{i+1}}</div>
       <div class="col-md-2 gray-element">{{coin.name}}</div>
       <div class="col-md-2 gray-element">{{coin.symbol}}</div>
-      <div class="col-md-2 gray-element">{{coin.quote.USD.price}}</div>
-      <div class="col-md-2 gray-element">{{coin.quote.USD.percent_change_24h}}</div>
+      <div class="col-md-2 gray-element">{{coin.quote.currentCurrency.price}}</div>
+      <div class="col-md-2 gray-element">{{coin.quote.currentCurrency.percent_change_24h}}</div>
       <div class="col-md-3 gray-element">{{coin.last_updated}}</div>
     </div>
   </div>

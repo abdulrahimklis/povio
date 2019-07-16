@@ -2,12 +2,12 @@
   <div>
     <div style="padding: 20px;">
       <div class="form-group">
-        <label for="exampleFormControlSelect1">Choose currencies</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>USD</option>
-          <option>EUR</option>
-          <option>CNY</option>
-        </select>
+        <h1 for="exampleFormControlSelect1" style="text-align: center">Choose currencies</h1>
+        <div class="container" style="display: flex; justify-content: space-around">
+          <button class="col-md-3" (click)="addCurrency('EUR')">EUR</button>
+          <button class="col-md-3" (click)="addCurrency('USD')">USD</button>
+          <button class="col-md-3" (click)="addCurrency('CNY')">CNY</button>
+        </div>
       </div>
     </div>
   </div>
